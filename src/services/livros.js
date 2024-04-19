@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const livrosAPI = axios.create({ baseURL: 'https://dev-books-server.vercel.app/livros' })
+const livrosAPI = axios.create({ baseURL: 'https://devbooks-server.onrender.com/livros' })
 
 // Função assíncrona para obter livros
 async function getLivros() {

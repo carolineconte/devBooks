@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const favoritosAPI = axios.create({ baseURL: 'https://dev-books-server.vercel.app/favoritos' })
+const favoritosAPI = axios.create({ baseURL: 'https://devbooks-server.onrender.com/favoritos' })
 
 async function getFavoritos() {
   try {
