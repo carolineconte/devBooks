@@ -1,0 +1,32 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.carrossel {
+  width: 70%;
+  margin: 1rem auto 5rem;
+
+  @media only screen and (min-width: var.$medium-screen) {
+    width: 90%;
+  }
+
+  img {
+    height: 290px;
+  }
+
+  .slick-slide>div {
+    margin: 10px 20px;
+  }
+
+  .slick-slider button.slick-prev::before {
+    display: block;
+    color: var.$color-blue-500;
+    font-size: 30px;
+  }
+
+  .slick-slider button.slick-next::before {
+    display: block;
+    color: var.$color-blue-500;
+    font-size: 30px;
+  }
+
+}

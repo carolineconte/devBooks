@@ -1,0 +1,75 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.errorPage {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  h1 {
+    @include mixins.ff-fw-fs(var.$primary-font, 200, 2.5em);
+    margin-top: -70px;
+  }
+
+  p {
+    @include mixins.ff-fw-fs(var.$primary-font, 200, 1.3em);
+    color: var.$color-gray-800;
+    margin: 22px;
+  }
+
+  a {
+    @media only screen and (min-width: var.$medium-screen) {
+      width: 40%;
+    }
+    color: inherit;
+    border-radius: 20px;
+    border: 2px solid var.$color-gray-800;
+    @include mixins.ff-fw-fs(var.$primary-font, 200, 1.3em);
+    padding: .1rem;
+    cursor: pointer;
+    background-color: var.$color-yellow-500;
+    padding: .7rem;
+    margin-bottom: 2rem;
+    &:hover {
+      box-shadow: 5px 5px var.$color-gray-600;
+    }
+  }
+
+  .gitContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    @media only screen and (min-width: var.$medium-screen) {
+      width: 40%;
+    }
+
+    a {
+      width: 60px;
+      height: 60px;
+      color: var.$color-gray-800;
+      font-size: 2.3em;
+      @include mixins.btn(transparent, .5rem, 1px solid, 100%);
+      box-shadow: 5px 5px var.$color-blue-500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: var.$color-blue-500;
+      }
+    }
+
+    span {
+      width: 80%;
+      @include mixins.ff-fw-fs(var.$primary-font, 200, .9em);
+      color: var.$color-gray-600;
+
+    }
+
+  }
+}

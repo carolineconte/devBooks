@@ -1,0 +1,44 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.favoritesSection {
+  width: 100%;
+  margin: 100px auto;
+
+  h1{
+    @include mixins.ff-fw-fs(var.$primary-font, 600, 2.5em);
+    color: var.$color-gray-800;
+    text-align: center;
+  }
+
+  h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .favoritesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 1em));
+    padding: 1em;
+    gap: 2em;
+    width: 100%;
+
+    img {
+      height: 250px;
+      max-width: 100%;
+    }
+
+    .card{
+      max-width: 100%;
+    }
+
+    @media only screen and (min-width: var.$medium-screen) {
+      grid-template-columns: repeat(4, auto);
+      width: 80%;
+      margin: 2rem auto;
+      column-gap: .5em;
+      row-gap: 4em;
+    }
+  }
+}

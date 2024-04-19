@@ -1,0 +1,53 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.searchPage {
+  margin-top: 100px;
+
+  .categorySection {
+    margin-top: 25px;
+  }
+
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mixins.ff-fw-fs(var.$Hero-font, 100, 1em);
+    color: var.$color-gray-800;
+
+    span {
+      color: var.$color-blue-500;
+    }
+
+    .filters {
+      border-bottom: 1px dashed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      width: 80%;
+    }
+  }
+
+  input {
+    width: 50%;
+    margin: 1rem;
+  }
+
+  select {
+    width: 30%;
+    max-width: 200px;
+  }
+
+  select,
+  input {
+    border: 1px solid var.$color-gray-800;
+    border-radius: 20px;
+    box-shadow: 5px 5px var.$color-orange-500;
+    font-size: 1.2em;
+    padding: .5rem 1rem;
+    outline: none;
+  }
+
+}

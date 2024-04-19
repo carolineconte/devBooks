@@ -1,0 +1,91 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.categoriesSection {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 21px));
+  margin: 2rem auto 4rem;
+  text-align: center;
+  width: 85%;
+  column-gap: 36px;
+  row-gap: 36px;
+
+  @media only screen and (min-width: var.$medium-screen) {
+    column-gap: 50px;
+    grid-template-columns: repeat(3, auto);
+    margin: 2rem auto 6rem;
+  }
+
+  .categoriesHome {
+    @include mixins.ff-fw-fs(var.$primary-font, 300, 1em);
+    border: 1px solid;
+    padding: .5rem;
+    border-radius: 10px;
+    box-shadow: 8px 8px var.$color-orange-500;
+    color: black;
+    transition: .5s;
+
+    @media only screen and (min-width: var.$medium-screen) {
+      @include mixins.ff-fw-fs(var.$primary-font, 300, 1.5em);
+      padding: 1rem;
+    }
+
+    &:hover {
+      background-color: var.$color-orange-500;
+      box-shadow: none;
+      color: white;
+    }
+  }
+}
+
+.trendingCarrossel {
+  text-align: center;
+  margin: 2rem auto;
+  cursor: pointer;
+  width: 80%;
+
+  h2 {
+    @include mixins.ff-fw-fs(var.$primary-font, 200, 1.8em);
+    color: var.$color-gray-800;
+  }
+
+
+  @media only screen and (min-width: var.$medium-screen) {
+    .slick-slide>div {
+      margin: 10px 20px;
+    }
+    margin: 5rem auto;
+  }
+
+
+  .trendingContainer {
+    width: 100%;
+    margin: 1rem auto;
+    border: 2px dashed var.$color-gray-600;
+    border-radius: 20px;
+    padding: 30px;
+
+    @media only screen and (min-width: var.$medium-screen) {
+      padding: 30px 87px;
+    }
+
+    .trendingImg img {
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.507);
+      height: 250px;
+      transition: .5s;
+      margin: 0 auto;
+
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.913);
+      }
+    }
+  }
+}
+
+#title{
+  @include mixins.ff-fw-fs(var.$primary-font, 600, 2.5em);
+  color: var.$color-gray-800;
+  text-align: center;
+}

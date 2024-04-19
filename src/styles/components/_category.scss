@@ -1,0 +1,13 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.categorySection {
+  width: 100%;
+  margin: 100px auto;
+
+  h1{
+    @include mixins.ff-fw-fs(var.$primary-font, 600, 2.5em);
+    color: var.$color-gray-800;
+    text-align: center;
+  }
+}

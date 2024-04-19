@@ -1,0 +1,153 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+.heroBanner {
+  padding: 2rem;
+  text-align: center;
+  margin-top: 6rem;
+
+  @media only screen and (min-width: var.$xlarge-screen) {
+    text-align: left;
+    width: 100%;
+    padding: 3rem;
+    @include mixins.container(flex, space-between, center, 1rem);
+    padding: 5rem;
+  }
+
+  #heroImg {
+    display: none;
+
+    @media only screen and (min-width: var.$xlarge-screen) {
+      display: block;
+      max-width: 50%;
+      max-height: 400px;
+      box-shadow: -20px -20px var.$color-blue-500;
+      border-radius: 0 20px 0 20px;
+    }
+  }
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-grow: 1;
+    position: relative;
+
+    h1 {
+      @include mixins.ff-fw-fs(var.$Hero-font, 300, 3.5rem);
+      line-height: 70px;
+      letter-spacing: 2px;
+
+      @media only screen and (min-width: var.$xlarge-screen) {
+        width: 70%;
+        margin-bottom: 17px;
+        @include mixins.ff-fw-fs(var.$Hero-font, 300, 4.5rem);
+      }
+    }
+
+    h2 {
+      @include mixins.ff-fw-fs(var.$primary-font, 200, 1.1em);
+
+      @media only screen and (min-width: var.$medium-screen) {
+        margin-bottom: 37px;
+      }
+    }
+
+    .heroSubtitle {
+      position: relative;
+    }
+
+    #heroGIF {
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: -110px;
+      right: 0;
+
+      @media only screen and (min-width: var.$xlarge-screen) {
+        height: 141px;
+        width: 141px;
+        right: 40%;
+      }
+    }
+
+    .elements {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      #dashLineHero {
+        display: none;
+
+        @media only screen and (min-width: var.$xlarge-screen) {
+          display: block;
+          width: 35%;
+        }
+      }
+    }
+
+    .inputContainer {
+      display: flex;
+      border: 1px solid var.$color-gray-800;
+      border-radius: 20px;
+      align-items: center;
+      box-shadow: 5px 5px var.$color-orange-500;
+      margin-bottom: 2em;
+
+      @media only screen and (min-width: var.$medium-screen) {
+        margin-left: 20%;
+        width: 60%;
+      }
+
+      @media only screen and (min-width: var.$xlarge-screen) {
+        margin-left: 0;
+      }
+
+      .icon {
+        font-size: 1.5em;
+        margin-right: 1rem;
+      }
+
+      input {
+        flex-grow: 1;
+        font-size: 1.2em;
+        margin-left: 1rem;
+        padding: .5rem;
+        border: none;
+        outline: none;
+      }
+    }
+
+    button {
+      @include mixins.btn(var.$color-yellow-500, .5rem 1rem, 2px solid var.$color-gray-800, 10px);
+      font-size: 1em;
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      justify-content: center;
+      transition: .3s;
+      width: 40%;
+      margin-left: 30%;
+
+      .heroIcon {
+        font-size: 1.5rem;
+      }
+
+      @media only screen and (min-width: var.$xlarge-screen) {
+        width: 20%;
+        margin-left: 20px;
+      }
+
+      @media only screen and (max-height: var.$medium-screen) {
+        width: 20%;
+        margin-left: 40%;
+      }
+
+      &:hover {
+        background-color: #c19e3b;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}

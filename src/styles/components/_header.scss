@@ -1,0 +1,99 @@
+@use '../abstract/var';
+
+.desktopHeader {
+  display: none;
+  grid-template-columns: 250px auto 250px;
+  padding: 1em 2em;
+  align-items: center;
+
+  .logoHeader {
+    width: 250px;
+  }
+
+  @media only screen and (min-width: var.$medium-screen) {
+    display: grid;
+  }
+}
+
+.headerMobile {
+  padding: 1rem 3rem 0;
+
+  .logoHeader {
+    width: 200px;
+  }
+
+  @media only screen and (min-width: var.$medium-screen) {
+    display: none;
+  }
+}
+
+.headerMobile,
+.desktopHeader {
+  border-bottom: 1px dashed black;
+  font-family: var.$secundary-font;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.headerMobileTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navHeader {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  a {
+    padding: .5rem;
+    border-bottom: 2px dashed transparent;
+    transition: .5s;
+    cursor: pointer;
+    color: var.$color-gray-800;
+
+    &:hover {
+      border-bottom: 2px dashed var.$color-gray-800;
+    }
+  }
+}
+
+.btnContainer {
+  justify-self: end;
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 1rem;
+
+  .cartBtn {
+    position: relative;
+  }
+
+  .itemsPrev {
+    position: absolute;
+    right: -13px;
+    top: -10px;
+    background-color: var.$color-yellow-500;
+    padding: 0 .3rem;
+    border-radius: 100%;
+    color: white;
+    font-size: 1rem;
+  }
+
+  a,
+  button {
+    border: none;
+    color: var.$color-yellow-500;
+    background-color: transparent;
+    font-size: 1.3em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../abstract/var';
+@use '../abstract/mixins';
+
+footer {
+  border-top: 1px dashed black;
+  padding: 1rem 2rem;
+  text-align: center;
+
+  @media only screen and (max-height: var.$medium-screen) {
+    margin-top: 5rem;
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .rights {
+      text-align: left;
+    }
+
+    .btnContainer {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+
+      a {
+        width: 40px;
+        height: 40px;
+        color: var.$color-gray-800;
+        font-size: 1.3em;
+        @include mixins.btn(transparent, .5rem, 1px solid, 100%);
+        box-shadow: 5px 5px var.$color-blue-500;
+
+        &:hover {
+          color: var.$color-blue-500;
+        }
+      }
+    }
+  }
+
+}

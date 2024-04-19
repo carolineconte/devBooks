@@ -1,0 +1,36 @@
+@mixin ff-fw-fs($f-family,$f-weigth,$f-size){
+  font-family: $f-family ;
+  font-weight: $f-weigth;
+  font-size: $f-size;
+}
+
+@mixin container($display,$justify,$align,$gap){
+  display: $display;
+  justify-content: $justify;
+  align-items: $align;
+  gap:$gap;
+}
+
+@mixin btn($background,$padding,$border,$border-radius){
+  background-color: $background;
+  padding:$padding;
+  border: $border;
+  border-radius: $border-radius;
+}
+
+@mixin badge($background-color) {
+  background-color: $background-color;
+  border-radius: 20px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+@mixin panel {
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}

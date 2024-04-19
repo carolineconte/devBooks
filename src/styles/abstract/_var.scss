@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.cdnfonts.com/css/fs-elliot-pro');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap');
+//colors
+$color-blue-500:#3ab8eb;
+$color-orange-500:#f9784b;
+$color-yellow-500:#fdbf0f;
+$color-gray-500:#3D3C3C;
+$color-gray-800:#3D3C3C;
+$color-gray-600:#676767;
+$gradient:linear-gradient(180deg, rgba(58,184,235,1) 5%, rgba(249,120,75,1) 24%, rgba(253,191,15,1) 61%, rgba(255,255,255,1) 99%);
+//fonts
+$Hero-font: 'FS Elliot Pro', sans-serif;
+$primary-font: "Poppins", sans-serif;
+$secundary-font: "Unica One", sans-serif;
+$box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.507);
+//breakpoints
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$xlarge-screen: 1200px;
