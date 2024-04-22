@@ -23,16 +23,16 @@ const BookCard = ({ book, i, fav }) => {
 
   const insertFav = async (id) => {
     await postFavorito(id)
-    setFavoritesIds([...favoritesIds, Number(id)])
+    setFavoritesIds([...favoritesIds, id])
   }
+
   const deleteFav = async (id) => {
     await deleteFavorito(id)
     const favoritesIdsAtt = favoritesIds.filter(item => item != id)
     setFavoritesIds(favoritesIdsAtt)
   }
 
-  function HandleAddToCart(e) {
-    e.preventDefault()
+  function HandleAddToCart() {
     const existingProductIndex = cartProducts.findIndex(product => product.id === book.id);
 
     if (existingProductIndex !== -1) {

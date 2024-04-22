@@ -13,14 +13,15 @@ const Favoritos = () => {
     fetchFavoritesList()
   }, [])
 
-  if (favoritesList?.length <= 0) {
+  if (favoritesList?.length < 0) {
     return (
       <NoResultsFavorites />
     )
   }
 
   return (
-    <section className='favoritesSection'>
+    <>
+    {favoritesList && (<section className='favoritesSection'>
       <h1>Favorite Books</h1>
       <h3 className="subtitle"><PiHeart /> Explore the books you&apos;ve been dreaming to read and plan your next adventures. <PiHeart /></h3>
       <div className="favoritesContainer">
@@ -28,7 +29,8 @@ const Favoritos = () => {
           favoritesList?.map(book => (<BookCard key={book.id} book={book} fav={true} />))
         }
       </div>
-    </section>
+    </section>)}
+    </>
   )
 }
 

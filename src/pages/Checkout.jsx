@@ -10,6 +10,10 @@ export const Checkout = () => {
   const { cartProducts } = useContext(CartContext)
   const [shipCost, setShipCost] = useState(0)
 
+  const totalCart = cartProducts.reduce((total, objeto) => {
+    return total + objeto.totalPrice;
+  }, 0)
+
   if (cartProducts.length < 1) {
     return (
       <EmptyCart />
@@ -27,7 +31,7 @@ export const Checkout = () => {
               <CartItemCard item={item} key={item.id} />
             ))}
           </div>
-          <p className="subtotalCheckout">Subtotal: <span>{formatPrice(cartProducts[0]?.price)}</span></p>
+          <p className="subtotalCheckout">Subtotal: <span>{formatPrice(totalCart)}</span></p>
         </section>
 
         <section className="border addressResume">
@@ -75,14 +79,14 @@ export const Checkout = () => {
             </div>
           </form>
           <div className="resumeCosts">
-            <p>Sub total<span>{formatPrice(cartProducts[0]?.price)}</span></p>
-            <p>Tax<span>{formatPrice(cartProducts[0]?.price * .12)}</span></p>
+            <p>Sub total<span>{formatPrice(totalCart)}</span></p>
+            <p>Tax<span>{formatPrice(totalCart * .12)}</span></p>
             <p>Discount<span>{formatPrice(0)}</span></p>
             <p>Shipping<span>{formatPrice(shipCost)}</span></p>
           </div>
           <button className="cartPaymentBtn"
             onClick={() => navigate('/thanks')}>
-            Pay {formatPrice(formatPrice(cartProducts[0]?.price + shipCost + (cartProducts[0]?.price * .12)))}
+            Pay {formatPrice(totalCart + shipCost +( totalCart * .12))}
           </button>
         </section>
 

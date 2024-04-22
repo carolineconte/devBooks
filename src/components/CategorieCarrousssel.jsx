@@ -61,13 +61,19 @@ export const CategorieCarrousssel = ({ category, alternativeText, alternativeIco
     fetchLivros()
   }, [])
 
+  if(!books){
+    return(
+      <p>aguarde</p>
+    )
+  }
+
   return (
     <section>
       <SectionTitle icon={alternativeIcon || <PiFolderOpenLight />} category={category} title={alternativeText || category} />
       <div className="carrossel">
         <Slider {...settings}>
-          {
-            books?.map(livro => <div key={livro.id}><BookCard book={livro} /></div>)
+          {books &&
+            (books.map(livro => <div key={livro.id}><BookCard book={livro} /></div>))
           }
         </Slider>
       </div>

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useParams,useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getBookById } from "../services/livros"
 import { BsCart2 } from "react-icons/bs";
 import { CategorieCarrousssel } from "../components/CategorieCarrousssel";
@@ -13,16 +13,16 @@ import { CartContext } from '../context/CartContext';
 
 export const ProductDetail = () => {
 
+  const navigate = useNavigate()
   const { id } = useParams()
 
+  let [qnt, setQnt] = useState(1)
   const { cartProducts, setCartProducts } = useContext(CartContext);
   const { favoritesIds, setFavoritesIds } = useContext(FavoritesListContext);
-  const [book, setBook] = useState(null);
-  const navigate = useNavigate()
-  let [qnt, setQnt] = useState(1)
+  const [book, setBook] = useState({});
   const formattedPrice = formatPrice(book?.price)
 
-  const isFavorite = favoritesIds.includes(Number(id))
+  const isFavorite = favoritesIds.includes(id)
 
   async function fetchBook() {
     try {
@@ -37,17 +37,20 @@ export const ProductDetail = () => {
   }, [id])
 
 
-  const insertFav = async (id) => {
+  const insertFav = async (e, id) => {
+    e.preventDefault()
     await postFavorito(id)
-    setFavoritesIds([...favoritesIds, Number(id)])
+    setFavoritesIds([...favoritesIds, id])
   }
-  const deleteFav = async (id) => {
+  const deleteFav = async (e, id) => {
+    e.preventDefault()
     await deleteFavorito(id)
     const favoritesIdsAtt = favoritesIds.filter(item => item != id)
     setFavoritesIds(favoritesIdsAtt)
   }
 
-  function HandleAddToCart() {
+  function HandleAddToCart(e) {
+    e.preventDefault()
     const existingProductIndex = cartProducts.findIndex(product => product.id === book.id);
 
     if (existingProductIndex !== -1) {
