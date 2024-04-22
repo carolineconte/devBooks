@@ -17,7 +17,7 @@ const HeroBanner = () => {
   return (
     <section className="heroBanner">
       <div className="heroContent">
-        <h1>What book you looking for?</h1>
+        <h1>What book you are looking for?</h1>
         <div className="heroSubtitle">
           <h2>Explore our catalog and find your next read.</h2>
           <img id="heroGIF" src="/book-gif.png" alt="" />
