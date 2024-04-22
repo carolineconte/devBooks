@@ -61,13 +61,13 @@
       height: 80px;
       width: 80px;
       position: absolute;
-      top: -110px;
-      right: 0;
+     display: none;
 
       @media only screen and (min-width: var.$xlarge-screen) {
         height: 141px;
         width: 141px;
-        right: 40%;
+        right: 20%;
+        display: block;
       }
     }
 
