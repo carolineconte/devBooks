@@ -68,7 +68,7 @@ export const Trending = () => {
     <section className="trendingCarrossel">
       <h2>Trending Books</h2>
       <h3 className="subtitle"><PiSparkle /> Drag to explore</h3>
-      <div className="trendingContainer">
+      <div className="trendingContainer">{}
         <Slider {...settings}>
           {
             books?.map(book =>

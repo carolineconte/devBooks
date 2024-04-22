@@ -126,8 +126,8 @@
       align-items: center;
       justify-content: center;
       transition: .3s;
-      width: 40%;
-      margin-left: 30%;
+      width: 100%;
+      
 
       .heroIcon {
         font-size: 1.5rem;
@@ -136,9 +136,10 @@
       @media only screen and (min-width: var.$xlarge-screen) {
         width: 20%;
         margin-left: 20px;
+        margin-left: 30%;
       }
 
-      @media only screen and (max-height: var.$medium-screen) {
+      @media only screen and (min-width: var.$medium-screen) {
         width: 20%;
         margin-left: 40%;
       }

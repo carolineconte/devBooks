@@ -5,10 +5,11 @@ import Slider from "react-slick";
 
 import { PiFolderOpenLight } from "react-icons/pi";
 import BookCard from '../components/BookCard'
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { SectionTitle } from "../components/SectionTitle";
 import { getLivrosCategory } from "../services/livros"
 import { Loading } from "./svg/Loading";
+import { BooksListContext } from "../context/BooksListContext";
 
 export const CategorieCarrousssel = ({ category, alternativeText, alternativeIcon }) => {
 
@@ -45,6 +46,9 @@ export const CategorieCarrousssel = ({ category, alternativeText, alternativeIco
   };
 
   const [books, setBooks] = useState([])
+  const { isloading } = useContext(BooksListContext)
+
+
 
   async function fetchLivros() {
     try {
@@ -62,9 +66,9 @@ export const CategorieCarrousssel = ({ category, alternativeText, alternativeIco
     fetchLivros()
   }, [])
 
-  if(!books){
-    return(
-      <Loading/>
+  if (isloading) {
+    return (
+      <Loading />
     )
   }
 
@@ -79,5 +83,5 @@ export const CategorieCarrousssel = ({ category, alternativeText, alternativeIco
         </Slider>
       </div>
     </section>
-    )
+  )
 }

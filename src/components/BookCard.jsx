@@ -54,23 +54,29 @@ const BookCard = ({ book, i, fav }) => {
 
   return (
     <section className="card">
-      <Link to={`/livros/${id}`}>
-        <img src={img} alt="" />
-        {i ? <span className="positionTrend">{i}</span> : ``}
-      </Link>
-      <div className="cardContent">
-        <h2>{title}</h2>
-        <div className="cardContentPrice">
-          <span>{formattedPrice}</span>
-          <button className={`saveBtn ${fav ? 'favorito' : ''}`} type="button"
-            onClick={fav ? () => deleteFav(id) : () => insertFav(id)}>
-            <BookMark />
+      {
+        !img ? <p>loading</p>:  (<>
+          <Link to={`/livros/${id}`}>
+            <img src={img} alt="" />
+            {i ? <span className="positionTrend">{i}</span> : ``}
+          </Link>
+          <div className="cardContent">
+            <h2>{title}</h2>
+            <div className="cardContentPrice">
+              <span>{formattedPrice}</span>
+              <button className={`saveBtn ${fav ? 'favorito' : ''}`} type="button"
+                onClick={fav ? () => deleteFav(id) : () => insertFav(id)}>
+                <BookMark />
+              </button>
+            </div>
+          </div>
+          <button className="cartButton"
+            onClick={HandleAddToCart}>
+            <BsCart2 />
           </button>
-        </div>
-      </div>
-      <button className="cartButton"
-        onClick={HandleAddToCart}
-      ><BsCart2 /></button>
+        </>)
+      }
+
 
     </section >
   )
