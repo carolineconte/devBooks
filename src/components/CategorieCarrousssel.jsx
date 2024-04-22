@@ -8,6 +8,7 @@ import BookCard from '../components/BookCard'
 import { useEffect, useState } from "react"
 import { SectionTitle } from "../components/SectionTitle";
 import { getLivrosCategory } from "../services/livros"
+import { Loading } from "./svg/Loading";
 
 export const CategorieCarrousssel = ({ category, alternativeText, alternativeIcon }) => {
 
@@ -56,14 +57,14 @@ export const CategorieCarrousssel = ({ category, alternativeText, alternativeIco
       console.error('Erro ao buscar livros:', error);
     }
   }
-
+console.log(books)
   useEffect(() => {
     fetchLivros()
   }, [])
 
   if(!books){
     return(
-      <p>aguarde</p>
+      <Loading/>
     )
   }
 

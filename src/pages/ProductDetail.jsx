@@ -74,7 +74,7 @@ export const ProductDetail = () => {
     navigate('/chekout')
   }
 
-  if (!book) {
+  if (!book.title) {
     return (
       <Loading />
     )
