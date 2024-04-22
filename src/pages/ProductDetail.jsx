@@ -35,7 +35,7 @@ export const ProductDetail = () => {
 
   useEffect(() => {
     fetchBook()
-  }, [])
+  }, [id])
 
   const insertFav = async (e, id) => {
     e.preventDefault()
