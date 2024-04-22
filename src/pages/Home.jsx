@@ -5,20 +5,11 @@ import { PiPathLight } from "react-icons/pi";
 import HeroBanner from '../components/Hero'
 import { CategorieCarrousssel } from "../components/CategorieCarrousssel";
 import { Trending } from "../components/TrendingCarrousssel";
-//CONTEXT
-import { useContext, useEffect } from "react";
-import { FavoritesListContext } from "../context/FavoritesListContext";
+
 
 export const Home = () => {
 
-  const { fetchFavoritesList } = useContext(FavoritesListContext)
   const categories = ['Adventure', 'Fantasy', 'Science fiction', 'Romance', 'Fairy Tale', 'Drama',]
-
-
-  useEffect(() => {
-    fetchFavoritesList()
-  }, [])
-
 
   return (
     <>

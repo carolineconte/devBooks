@@ -27,7 +27,7 @@ function App() {
         <Route path='/chekout' element={<StandardPage><Checkout /></StandardPage>} />
         <Route path='/search' element={<StandardPage><SearchPage /></StandardPage>} />
         <Route path='/thanks' element={<ThanksPage />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='/*' element={<NotFound />} />
         <Route path='/login' element={<AcessForm />} />
       </Routes>
     </BrowserRouter>

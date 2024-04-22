@@ -57,7 +57,7 @@ export const CategorieCarrousssel = ({ category, alternativeText, alternativeIco
       console.error('Erro ao buscar livros:', error);
     }
   }
-console.log(books)
+
   useEffect(() => {
     fetchLivros()
   }, [])
