@@ -2,7 +2,6 @@
 @use '../abstract/mixins';
 
 .card {
-  width: 200px;
   margin: auto;
   cursor: pointer;
   position: relative;
@@ -44,7 +43,6 @@
     .cardContentPrice {
       @include mixins.container(flex, space-between, center, 1rem);
       margin-top: 5px;
-      padding: 0 1rem;
 
       span {
         @include mixins.ff-fw-fs(var.$primary-font, 600, .9em);
