@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/*",
-      "destination": "/index.html"
+      "destination": "https://carolinecontedev-dev-books.vercel.app/"
     }
   ]
 }
