@@ -59,7 +59,7 @@ const BookCard = ({ book, i, fav }) => {
         {i ? <span className="positionTrend">{i}</span> : ``}
       </Link>
       <div className="cardContent">
-        <h2>{title}</h2>
+        <h2><span>{title}</span></h2>
         <div className="cardContentPrice">
           <span>{formattedPrice}</span>
           <button className={`saveBtn ${fav ? 'favorito' : ''}`} type="button"

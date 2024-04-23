@@ -5,6 +5,8 @@
   margin: auto;
   cursor: pointer;
   position: relative;
+  max-width: 100%;
+  margin-bottom: 2rem;
 
   img {
     width: 100%;
@@ -36,8 +38,13 @@
     h2 {
       @include mixins.ff-fw-fs(var.$primary-font, 600, 1em);
       margin-top: 10px;
-      height: 50px;
       color: var.$color-gray-800;
+      max-width:200px;
+      height: 50px;
+      display: -webkit-box; /* Exibe o conteúdo em um formato de caixa flexível do tipo bloco */
+      -webkit-box-orient: vertical; /* Orienta o bloco flexível verticalmente */
+      -webkit-line-clamp: 2; /* Define o número máximo de linhas */
+      overflow: hidden; /* Oculta qualquer conteúdo que exceda as duas linhas */
     }
 
     .cardContentPrice {

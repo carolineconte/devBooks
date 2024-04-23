@@ -55,7 +55,9 @@ const Header = () => {
                 <IoBag />
               </button>
             </div>
-            <button><FaUserAlt /></button>
+            <Link to='/login'>
+            <FaUserAlt />
+          </Link>
           </div>
         </div>
         <nav>

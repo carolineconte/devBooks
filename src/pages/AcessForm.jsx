@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import Header from "../components/Header";
+import { CartSideBar } from "../components/CartSideBar";
+import { CartContext } from "../context/CartContext";
 
 export const AcessForm = () => {
 
   const [passwordType, setPasswordType] = useState('password');
+  const { isCartActive } = useContext(CartContext)
 
   const togglePasswordType = (e) => {
     e.preventDefault()
@@ -14,7 +17,9 @@ export const AcessForm = () => {
 
   return (
     <div className="acessPage">
+      
       <Header/>
+      {isCartActive && <CartSideBar />}
       <form className="formLogin">
         <label>Username:</label>
         <input type="text" placeholder='Enter your username:' />

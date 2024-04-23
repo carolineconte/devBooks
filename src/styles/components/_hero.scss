@@ -6,7 +6,7 @@
   text-align: center;
   margin-top: 6rem;
 
-  @media only screen and (min-width: var.$xlarge-screen) {
+  @media only screen and (min-width: var.$medium-screen) {
     text-align: left;
     width: 100%;
     padding: 3rem;
@@ -17,7 +17,7 @@
   #heroImg {
     display: none;
 
-    @media only screen and (min-width: var.$xlarge-screen) {
+    @media only screen and (min-width: var.$medium-screen) {
       display: block;
       max-width: 50%;
       max-height: 400px;
@@ -35,10 +35,11 @@
 
     h1 {
       @include mixins.ff-fw-fs(var.$Hero-font, 300, 3.5rem);
-      line-height: 70px;
+      line-height: 50px;
       letter-spacing: 2px;
 
       @media only screen and (min-width: var.$xlarge-screen) {
+           line-height: 70px;
         width: 70%;
         margin-bottom: 17px;
         @include mixins.ff-fw-fs(var.$Hero-font, 300, 4.5rem);

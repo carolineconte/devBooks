@@ -4,7 +4,8 @@
 .modal {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 100vh;
   background-color: var.$color-gray-600;
   opacity: .3;

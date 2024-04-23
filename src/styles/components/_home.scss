@@ -24,7 +24,6 @@
     box-shadow: 8px 8px var.$color-orange-500;
     color: black;
     transition: .5s;
-
     @media only screen and (min-width: var.$medium-screen) {
       @include mixins.ff-fw-fs(var.$primary-font, 300, 1.5em);
       padding: 1rem;

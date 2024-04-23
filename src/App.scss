@@ -57,6 +57,7 @@
   @include mixins.ff-fw-fs(var.$primary-font, 200, 1.1em);
   color: var.$color-gray-600;
   text-align: center;
+  margin-bottom: 2rem;
 
   & :first-child {
     font-size: 1.3em;
@@ -105,10 +106,11 @@
   padding: 1em;
   gap: 2em;
   width: 100%;
-  
+
   img {
     height: 250px;
     max-width: 100%;
+    width: 190px;
   }
 
   .card {
@@ -116,10 +118,8 @@
   }
 
   @media only screen and (min-width: var.$medium-screen) {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 200px);
     width: 80%;
     margin: 2rem auto;
-    column-gap: .5em;
-    row-gap: 4em;
   }
 }

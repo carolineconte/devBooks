@@ -23,7 +23,7 @@ export const Trending = () => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 979,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 4
         }

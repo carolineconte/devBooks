@@ -30,12 +30,12 @@ export const SearchPage = () => {
         <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         <div className='filters'>
           <h2>Results <span>&quot;{searchTerm}&quot;</span></h2>
-          <select name="" id="">
+          {/* <select name="" id="">
             <option value="">Filter By:</option>
             <option value="category">Category</option>
             <option value="author">Author</option>
             <option value="title">Title</option>
-          </select>
+          </select> */}
         </div>
       </div>
 
