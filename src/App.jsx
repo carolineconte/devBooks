@@ -1,24 +1,23 @@
 import './App.scss'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Suspense, lazy } from 'react'
-
 import { Home } from './pages/Home'
+import Favoritos from './pages/Favoritos'
+import { ProductDetail } from './pages/ProductDetail'
+import { NotFound } from './pages/NotFound'
 import { StandardPage } from './pages/StandardPage'
+
+import { Categories } from './pages/Category'
+import { TrendPage } from './pages/TrendPage'
+import { SearchPage } from './pages/SearchPage'
+import { Suspense, lazy } from 'react'
+import { Loading } from './components/svg/Loading'
 
 const ThanksPage = lazy(() => import('./pages/ThanksPage'))
 const Checkout = lazy(() => import('./pages/Checkout'))
 const AcessForm = lazy(() => import('./pages/AcessForm'));
-const SearchPage = lazy(() => import('./pages/SearchPage'));
-const NotFound = lazy(() => import('./pages/NotFound'));
-const TrendPage = lazy(() => import('./pages/TrendPage'));
-const ProductDetail = lazy(() => import('./pages/ProductDetail'));
-const Categories = lazy(() => import('./pages/Category'));
-const Favoritos = lazy(() => import('./pages/Favoritos'));
-const Loading = lazy(() => import('./components/svg/Loading'));
 
 function App() {
-
 
   return (
     <BrowserRouter>
