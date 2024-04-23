@@ -5,24 +5,11 @@ import { PiPathLight } from "react-icons/pi";
 import HeroBanner from '../components/Hero'
 import { CategorieCarrousssel } from "../components/CategorieCarrousssel";
 import { Trending } from "../components/TrendingCarrousssel";
-import { useContext, useEffect } from "react";
-import { BooksListContext } from "../context/BooksListContext";
-import { Loading } from "../components/svg/Loading";
-
 
 export const Home = () => {
 
   const categoriesHome = ['Adventure','Romance', 'Fairy Tale']
   const categories = ['Adventure', 'Fantasy', 'Science fiction', 'Romance', 'Fairy Tale', 'Drama',]
-  const { fetchBooksList,isloading } = useContext(BooksListContext)
-
-  useEffect(()=>{fetchBooksList()},[])
-
-  if(isloading){
-    return(
-      <Loading/>
-    )
-  }
 
   return (
     <>
