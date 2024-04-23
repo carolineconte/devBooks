@@ -61,12 +61,13 @@
       height: 80px;
       width: 80px;
       position: absolute;
-     display: none;
+      display: none;
 
       @media only screen and (min-width: var.$xlarge-screen) {
         height: 141px;
         width: 141px;
-        right: 20%;
+        right: 30%;
+        top: -50px;
         display: block;
       }
     }
@@ -110,7 +111,7 @@
 
       input {
         flex-grow: 1;
-        font-size: 1.2em;
+        font-size: .9em;
         margin-left: 1rem;
         padding: .5rem;
         border: none;
@@ -127,21 +128,19 @@
       justify-content: center;
       transition: .3s;
       width: 100%;
-      
 
       .heroIcon {
         font-size: 1.5rem;
       }
 
-      @media only screen and (min-width: var.$xlarge-screen) {
-        width: 20%;
-        margin-left: 20px;
-        margin-left: 30%;
+      @media only screen and (min-width: var.$medium-screen) {
+        width: 40%;
+        margin: auto;
       }
 
-      @media only screen and (min-width: var.$medium-screen) {
+      @media only screen and (min-width: var.$xlarge-screen) {
         width: 20%;
-        margin-left: 40%;
+        margin: 5px;
       }
 
       &:hover {

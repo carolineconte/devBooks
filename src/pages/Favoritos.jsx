@@ -8,10 +8,8 @@ import { PiHeart } from "react-icons/pi"
 const Favoritos = () => {
 
   const { favoritesList, fetchFavoritesList } = useContext(FavoritesListContext)
+  useEffect(() => { fetchFavoritesList() }, [])
 
-  useEffect(() => {
-    fetchFavoritesList()
-  }, [])
 
   if (favoritesList?.length < 0) {
     return (

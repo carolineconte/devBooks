@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { BookMark } from "./svg/BookMark";
 //Services
@@ -54,32 +54,26 @@ const BookCard = ({ book, i, fav }) => {
 
   return (
     <section className="card">
-      {
-        !img ? <p>loading</p>:  (<>
-          <Link to={`/livros/${id}`}>
-            <img src={img} alt="" />
-            {i ? <span className="positionTrend">{i}</span> : ``}
-          </Link>
-          <div className="cardContent">
-            <h2>{title}</h2>
-            <div className="cardContentPrice">
-              <span>{formattedPrice}</span>
-              <button className={`saveBtn ${fav ? 'favorito' : ''}`} type="button"
-                onClick={fav ? () => deleteFav(id) : () => insertFav(id)}>
-                <BookMark />
-              </button>
-            </div>
-          </div>
-          <button className="cartButton"
-            onClick={HandleAddToCart}>
-            <BsCart2 />
+      <Link to={`/livros/${id}`}>
+        <img src={img} alt="" />
+        {i ? <span className="positionTrend">{i}</span> : ``}
+      </Link>
+      <div className="cardContent">
+        <h2>{title}</h2>
+        <div className="cardContentPrice">
+          <span>{formattedPrice}</span>
+          <button className={`saveBtn ${fav ? 'favorito' : ''}`} type="button"
+            onClick={fav ? () => deleteFav(id) : () => insertFav(id)}>
+            <BookMark />
           </button>
-        </>)
-      }
-
-
+        </div>
+      </div>
+      <button className="cartButton"
+        onClick={HandleAddToCart}>
+        <BsCart2 />
+      </button>
     </section >
   )
 }
 
-export default BookCard
+export default memo(BookCard);

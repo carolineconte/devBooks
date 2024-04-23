@@ -12,7 +12,7 @@
 
   @media only screen and (min-width: var.$medium-screen) {
     column-gap: 50px;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 30%);
     margin: 2rem auto 6rem;
   }
 

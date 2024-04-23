@@ -1,21 +1,18 @@
 /* eslint-disable react/prop-types */
 
 import { PiSparkle } from "react-icons/pi";
-import { useEffect, useState } from "react"
-
-import { getLivros } from "../services/livros"
-
-/* eslint-disable react/prop-types */
+import { useContext } from "react"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
-
+import { BooksListContext } from "../context/BooksListContext";
 
 export const Trending = () => {
 
-  const [books, setBooks] = useState([])
+  const { booksList } = useContext(BooksListContext)
+
+  const books = booksList?.filter(item => item.trend === true)
 
   const settings = {
     dots: false,
@@ -24,8 +21,6 @@ export const Trending = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     initialSlide: 0,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />
     responsive: [
       {
         breakpoint: 979,
@@ -49,26 +44,11 @@ export const Trending = () => {
     ]
   };
 
-  async function fetchLivros() {
-    try {
-      // Obter os dados dos livros usando a função getLivros
-      const data = await getLivros();
-      setBooks(data.filter(item => item.trend === true));
-    } catch (error) {
-      // Lidar com erros, se houver
-      console.error('Erro ao buscar livros:', error);
-    }
-  }
-
-  useEffect(() => {
-    fetchLivros()
-  }, [])
-
   return (
     <section className="trendingCarrossel">
       <h2>Trending Books</h2>
       <h3 className="subtitle"><PiSparkle /> Drag to explore</h3>
-      <div className="trendingContainer">{}
+      <div className="trendingContainer">{ }
         <Slider {...settings}>
           {
             books?.map(book =>
