@@ -89,7 +89,7 @@
     cursor: pointer;
   }
 
-  
+
   input {
     width: 20%;
     border-radius: 10px;
@@ -101,11 +101,11 @@
 
 .cardsContainer {
   display: grid;
-  grid-template-columns: repeat(2, calc(50% - 1em));
+  grid-template-columns: repeat(2, auto);
   padding: 1em;
   gap: 2em;
   width: 100%;
-
+  
   img {
     height: 250px;
     max-width: 100%;

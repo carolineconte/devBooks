@@ -18,14 +18,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<StandardPage><Home /></StandardPage>} />
-        <Route path='/favoritos' element={<StandardPage><Favoritos /></StandardPage>} />
-        <Route path='/livros/:id' element={<StandardPage><ProductDetail /></StandardPage>} />
-        <Route path='/category/:categorie' element={<StandardPage><Categories /></StandardPage>} />
-        <Route path='/trendingbooks' element={<StandardPage><TrendPage /></StandardPage>} />
-        <Route path='/myfavorites' element={<StandardPage><Favoritos /></StandardPage>} />
-        <Route path='/chekout' element={<StandardPage><Checkout /></StandardPage>} />
-        <Route path='/search' element={<StandardPage><SearchPage /></StandardPage>} />
+        <Route path='/' element={<StandardPage />} >
+          <Route index element={<Home />} />
+          <Route path='myfavorites' element={<Favoritos />} />
+          <Route path='/trendingbooks' element={<TrendPage />} />
+          <Route path='/chekout' element={<Checkout />} />
+          <Route path='/search' element={<SearchPage />} />
+          <Route path='/livros/:id' element={<ProductDetail />} />
+          <Route path='/category/:categorie' element={<Categories />} />
+        </Route>
         <Route path='/thanks' element={<ThanksPage />} />
         <Route path='/*' element={<NotFound />} />
         <Route path='/login' element={<AcessForm />} />

@@ -6,9 +6,10 @@ import { FavoritesListProvider } from '../context/FavoritesListContext'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { CartSideBar } from '../components/CartSideBar'
+import { Outlet } from 'react-router-dom';
 
 
-export const StandardPage = ({ children }) => {
+export const StandardPage = () => {
 
   const { isCartActive } = useContext(CartContext)
 
@@ -18,7 +19,7 @@ export const StandardPage = ({ children }) => {
       <FavoritesListProvider>
         {isCartActive && <CartSideBar />}
         <main>
-          {children}
+        <Outlet />
         </main>
       </FavoritesListProvider>
       <Footer />
