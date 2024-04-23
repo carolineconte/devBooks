@@ -48,12 +48,11 @@
     color: var.$color-gray-800;
   }
 
-
   @media only screen and (min-width: var.$medium-screen) {
     .slick-slide>div {
       margin: 10px 20px;
     }
-    margin: 5rem auto;
+    margin: 0 auto 5rem;
   }
 
 
