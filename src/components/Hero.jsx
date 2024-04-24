@@ -36,7 +36,7 @@ const HeroBanner = () => {
           </div>
         </form>
       </div>
-      <img id="heroImg" src="heroImg.png" alt="Women in a bookstore" />
+      <img id="heroImg" src="heroImg.jpg" alt="Women in a bookstore" />
     </section>
   )
 }
